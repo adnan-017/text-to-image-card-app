@@ -1,9 +1,8 @@
 import React, { useState, useRef } from 'react';
-import { Card, CardContent } from '@/components/ui/card';
-import { Input } from '@/components/ui/input';
-import { Button } from '@/components/ui/button';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Download } from 'lucide-react';
+import { Card, CardContent } from '../components/ui/card';
+import { Input } from '../components/ui/input';
+import { Button } from '../components/ui/button';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '../components/ui/select';
 
 const TextToImageCard = () => {
   const [text, setText] = useState('Sample Text');
@@ -34,9 +33,6 @@ const TextToImageCard = () => {
     const card = cardRef.current;
     if (!card) return;
 
-    // In a real-world scenario, you'd use a library like html2canvas
-    // to convert the DOM element to an image. For this example,
-    // we'll simulate the download with an alert.
     alert('In a full implementation, this would download the image.');
   };
 
@@ -79,7 +75,6 @@ const TextToImageCard = () => {
       <div className="flex space-x-2">
         <Button onClick={handleShare} className="flex-1">Share</Button>
         <Button onClick={handleDownload} className="flex-1">
-          <Download className="w-4 h-4 mr-2" />
           Download
         </Button>
       </div>
