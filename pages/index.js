@@ -11,16 +11,16 @@ const TextToImageCard = () => {
   const cardRef = useRef(null);
 
   const templates = [
-    '/api/placeholder/300/200',
-    '/api/placeholder/300/200',
-    '/api/placeholder/300/200',
-    '/api/placeholder/300/200',
-    '/api/placeholder/300/200',
-    '/api/placeholder/300/200',
-    '/api/placeholder/300/200',
-    '/api/placeholder/300/200',
-    '/api/placeholder/300/200',
-    '/api/placeholder/300/200',
+    'https://picsum.photos/300/200?random=1',
+    'https://source.unsplash.com/300x200/?nature,water',
+    'https://placekitten.com/300/200',
+    'https://placeimg.com/300/200/arch',
+    'https://placebeard.it/300x200',
+    'https://picsum.photos/300/200?random=2',
+    'https://source.unsplash.com/300x200/?city,night',
+    'https://placebear.com/300/200',
+    'https://placeimg.com/300/200/tech',
+    'https://picsum.photos/300/200?random=3'
   ];
 
   const handleTextChange = (e) => setText(e.target.value);
@@ -36,15 +36,8 @@ const TextToImageCard = () => {
 
     // In a real-world scenario, you'd use a library like html2canvas
     // to convert the DOM element to an image. For this example,
-    // we'll simulate the download with a data URL.
-    const dummyDataUrl = 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD/2wBDAAMCAgMCAgMDAwMEAwMEBQgFBQQEBQoHBwYIDAoMDAsKCwsNDhIQDQ4RDgsLEBYQERMUFRUVDA8XGBYUGBIUFRT/2wBDAQMEBAUEBQkFBQkUDQsNFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBQUFBT/wAARCAABAAEDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD8qqKKK/ZD8LP/2Q==';
-
-    const link = document.createElement('a');
-    link.href = dummyDataUrl;
-    link.download = 'image-card.jpg';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
+    // we'll simulate the download with an alert.
+    alert('In a full implementation, this would download the image.');
   };
 
   return (
@@ -78,7 +71,7 @@ const TextToImageCard = () => {
               className="w-full h-auto"
             />
             <div className="absolute inset-0 flex items-center justify-center">
-              <p className="text-white text-xl font-bold text-center">{text}</p>
+              <p className="text-white text-xl font-bold text-center shadow-sm">{text}</p>
             </div>
           </div>
         </CardContent>
